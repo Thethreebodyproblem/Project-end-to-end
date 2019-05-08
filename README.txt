@@ -6,10 +6,10 @@ Slalom.ipynb:
 This is the offical notebook with the detail explaination of all the methology. If you want to know more about the detail of
 this project, you can kind them in this file
 -----
-Slalom.ppt:
+report.ppt:
 This is the PPT which can give you an overview about this project
 -----
-Slalom.py:
+model_online_deploy.py:
 this is the script which can run in the command line to make prediction.
 It has a parameter called PREDICTION and this can control the type of prediction (probability or not)
 -----
