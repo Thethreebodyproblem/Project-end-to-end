@@ -45,6 +45,6 @@ But for the model training part, I use SMOTE to deal with this problem.
 
 3.How would you use this model to detect fraud in real-time?
 This python script enable you to predict batch data. 
-Run the Slalom.py in the command line. Make sure the you have the objects in the zip file stored in right
+Run the model_online_deploy.py in the command line. Make sure the you have the objects in the zip file stored in right
 file path. 
 The final prediction is in the file called output.csv
