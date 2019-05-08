@@ -2,7 +2,7 @@ In this zip file, files ended with .pkl are the objects required for the scipt i
 
 
 -----
-Slalom.ipynb:
+project.ipynb:
 This is the offical notebook with the detail explaination of all the methology. If you want to know more about the detail of
 this project, you can kind them in this file
 -----
