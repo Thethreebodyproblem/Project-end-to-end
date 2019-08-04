@@ -33,7 +33,6 @@ def deal_with_date(df):
             return datetime.strptime(x, '%Y-%m-%d %H:%M:%S')
         else:
             return x
-
     df['signup_time'] = df['signup_time'].apply(lambda x: transform_date(x))
     df['purchase_time'] = df['purchase_time'].apply(lambda x: transform_date(x))
     df['sinup_purchase_diff_hour'] = (df['purchase_time'] - df['signup_time']).apply(
@@ -52,7 +51,7 @@ def deal_with_date(df):
     return df
 
 def _load_obj(filepath):
-        """
+    """
     The function load pickle object;
     
     args:
@@ -61,9 +60,9 @@ def _load_obj(filepath):
     return:
         pickle object : The available model 
     """
-
     with open(filepath, 'rb') as f:
         return pickle.load(f)
+    
 def map_algorithm(sort_list, sort_interval):
     """
     this algorithm use two pointer algorithm to match two sorted array by Ip address
@@ -77,12 +76,10 @@ def map_algorithm(sort_list, sort_interval):
     """
     j = 0
     res = []
-
     for i in range(len(sort_list)):
         cur_interval = [sort_interval['lower_bound_ip_address'][j], sort_interval['upper_bound_ip_address'][j]]
         cur_country = sort_interval['country'][j]
         #         print(sort_list[i],cur_interval)
-
         while j < len(sort_interval):
             cur_interval = [sort_interval['lower_bound_ip_address'][j], sort_interval['upper_bound_ip_address'][j]]
             cur_country = sort_interval['country'][j]
@@ -111,7 +108,6 @@ def deal_with_IP(df,df_IP):
     return:
         df (pandas dataframe) : The training data with country column
     """
-
     IP_col = df['ip_address']
     res = map_algorithm(np.array(IP_col), df_IP)
     IP_Country = pd.DataFrame({'IP': IP_col, 'Country': res})
@@ -128,7 +124,6 @@ def transform_category(df,SETTINGS):
         df (pandas dataframe) : The training data
         SETTINGS (Json): The configuration file
     """
-   
     for item in SETTINGS['Transformer']:
         CLF=_load_obj(SETTINGS['Transformer'][item])
         df[item]=CLF.transform(df[item])
@@ -140,7 +135,6 @@ def _load_setting(path):
     args:
         path (str) : name of configuration file
     """
-
     fp=open(os.path.join('.',path),'rb')
     SETTINGS=json.load(fp)
     fp.close()
