@@ -1,0 +1,13 @@
+{
+"input_path":"./data/test.csv",
+"model_path":"./model/model.pkl",
+"prediction_type":"prediction",
+"output_path":"./data/output.csv",
+"IP_country_map_path":"./data/IpAddress_to_Country.csv",
+"Transformer":{
+                "browser":"./model/browser_LB.pkl",
+                "Country":"./model/Country_LB.pkl",
+                "sex":"./model/sex_LB.pkl",
+                "source":"./model/source_LB.pkl"
+              }
+}
