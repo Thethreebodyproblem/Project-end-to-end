@@ -141,7 +141,7 @@ def _load_setting(path):
     return SETTINGS
     
 def main():
-    SETTINGS=_load_setting(SETTING=sys.argv[1])
+    SETTINGS=_load_setting(sys.argv[1])
     geo=pd.read_csv(SETTINGS['IP_country_map_path'])
     geo.sort_values('lower_bound_ip_address', ascending=True, inplace=True)
     df=pd.read_csv(SETTINGS['input_path'])
